@@ -1,8 +1,8 @@
 apiVersion: v2
 name: vote-app
-description: A Helm chart for Vote App
+description: Helm chart for Vote App
 type: application
-version: 1.0.3
+version: 1.0.4
 appVersion: "1.0.0"
 
 dependencies:
