@@ -2,7 +2,7 @@
 serviceAccount:
   create: true
   automount: true
-  name: "vote-app"
+  name: vote-app
 
 ingress:
   enabled: false
@@ -14,8 +14,8 @@ ingress:
 secret:
   enabled: true
   data:
-    dbUsername: "postgres"
-    dbPassword: "postgres"
+    dbUsername: postgres
+    dbPassword: postgres
 
 # Vote Handler Config
 vote:
