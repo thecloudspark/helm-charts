@@ -2,6 +2,28 @@ apiVersion: v1
 entries:
   vote-app:
   - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2024-06-09T03:54:21.374247341Z"
+    dependencies:
+    - name: postgresql
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 15.5.4
+    - name: redis
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 19.5.2
+    description: A Helm chart for Vote App
+    digest: 277d0bca8ccde0b2e6a45ab205a7ead9f5ac1baa5a97e1dd82cf19c048bca222
+    keywords:
+    - vote-app
+    maintainers:
+    - email: romarcablao@gmail.com
+      name: Romar Cablao
+    name: vote-app
+    type: application
+    urls:
+    - https://github.com/thecloudspark/helm-charts/releases/download/vote-app-1.0.1/vote-app-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     appVersion: 1.0.0
     created: "2024-06-09T11:33:48.6260616+08:00"
     dependencies:
@@ -23,4 +45,4 @@ entries:
     urls:
     - https://github.com/thecloudspark/helm-charts/vote-app-1.0.0.tgz
     version: 1.0.0
-generated: "2024-06-09T11:33:48.6131574+08:00"
+generated: "2024-06-09T03:54:21.374256638Z"
