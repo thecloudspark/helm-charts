@@ -1,0 +1,21 @@
+apiVersion: v2
+name: vote-app
+description: A Helm chart for Vote App
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+
+dependencies:
+  - name: postgresql
+    version: 15.5.4
+    repository: oci://registry-1.docker.io/bitnamicharts
+  - name: redis
+    version: 19.5.2
+    repository: oci://registry-1.docker.io/bitnamicharts
+
+keywords:
+  - vote-app
+
+maintainers:
+  - name: Romar Cablao
+    email: romarcablao@gmail.com

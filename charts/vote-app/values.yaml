@@ -1,0 +1,96 @@
+# Default values for Vote-App
+serviceAccount:
+  create: true
+  automount: true
+  name: "vote-app"
+
+ingress:
+  enabled: false
+  className: nginx
+  annotations: {}
+  tlsEnabled: false
+  hostname: ""
+
+secret:
+  enabled: true
+  data:
+    dbUsername: "postgres"
+    dbPassword: "postgres"
+
+# Vote Handler Config
+vote:
+  enabled: true
+  replicas: 1
+  image: thecloudspark/app-vote:1.0
+  resources:
+    limits:
+      cpu: 100m
+      memory: 128Mi
+    requests:
+      cpu: 50m
+      memory: 64Mi
+  hpa:
+    enabled: true
+    minReplicas: 1
+    maxReplicas: 5
+    targetCPUUtilizationPercentage: 80
+
+# Results Handler Config
+result:
+  enabled: true
+  replicas: 1
+  image: thecloudspark/app-result:1.0
+  resources:
+    limits:
+      cpu: 100m
+      memory: 256Mi
+    requests:
+      cpu: 50m
+      memory: 128Mi
+  hpa:
+    enabled: false
+
+# Worker Handler Config
+worker:
+  enabled: true
+  replicas: 1
+  image: thecloudspark/app-worker:1.0
+  resources:
+    limits:
+      cpu: 100m
+      memory: 256Mi
+    requests:
+      cpu: 50m
+      memory: 128Mi
+  hpa:
+    enabled: false
+
+# PostgreSQL Overrides
+postgresql:
+  auth:
+    username: postgres
+    password: postgres
+  primary:
+    resources:
+      limits:
+        cpu: 200m
+        memory: 512Mi
+      requests:
+        cpu: 100m
+        memory: 256Mi
+
+# Redis Overrides
+redis:
+  auth:
+    enabled: false
+  master:
+    count: 1
+    resources:
+      limits:
+        cpu: 200m
+        memory: 512Mi
+      requests:
+        cpu: 100m
+        memory: 256Mi
+  replica:
+    replicaCount: 0
