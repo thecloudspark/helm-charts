@@ -1,8 +1,8 @@
 # vote-app
 
-![Version: 1.0.2](https://img.shields.io/badge/Version-1.0.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.0](https://img.shields.io/badge/AppVersion-1.0.0-informational?style=flat-square)
+![Version: 1.0.4](https://img.shields.io/badge/Version-1.0.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.0](https://img.shields.io/badge/AppVersion-1.0.0-informational?style=flat-square)
 
-A Helm chart for Vote App
+Helm chart for Vote App
 
 ## Maintainers
 
@@ -47,6 +47,9 @@ A Helm chart for Vote App
 | result.resources.limits.memory | string | `"256Mi"` |  |
 | result.resources.requests.cpu | string | `"50m"` |  |
 | result.resources.requests.memory | string | `"128Mi"` |  |
+| result.service.port | int | `80` |  |
+| result.service.targetPort | int | `5000` |  |
+| result.service.type | string | `"ClusterIP"` |  |
 | secret.data.dbPassword | string | `"postgres"` |  |
 | secret.data.dbUsername | string | `"postgres"` |  |
 | secret.enabled | bool | `true` |  |
@@ -64,6 +67,9 @@ A Helm chart for Vote App
 | vote.resources.limits.memory | string | `"128Mi"` |  |
 | vote.resources.requests.cpu | string | `"50m"` |  |
 | vote.resources.requests.memory | string | `"64Mi"` |  |
+| vote.service.port | int | `80` |  |
+| vote.service.targetPort | int | `5001` |  |
+| vote.service.type | string | `"ClusterIP"` |  |
 | worker.enabled | bool | `true` |  |
 | worker.hpa.enabled | bool | `false` |  |
 | worker.image | string | `"thecloudspark/app-worker:1.0"` |  |

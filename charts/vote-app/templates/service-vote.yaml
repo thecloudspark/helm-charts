@@ -4,11 +4,13 @@ kind: Service
 metadata:
   name: {{ .Release.Name }}-vote
 spec:
-  type: NodePort
   selector:
     app: vote-app
+  type: {{ .Values.vote.service.type }}
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 5000
+    - port: {{ .Values.vote.service.port }}
+      targetPort: {{ .Values.vote.service.targetPort }}
+      {{- if eq .Values.vote.service.type "NodePort" }}
+      nodePort: {{ .Values.vote.service.nodePort | default "" }}
+      {{- end }}
 {{- end -}}
