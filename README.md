@@ -10,7 +10,7 @@ To use these Helm charts, you'll need to have Helm installed on your local machi
 To add this Helm repository to your local, run the following command:
 
 ```bash
-helm repo add thecloudspark https://thecloudspark.github.io/helm-chart
+helm repo add thecloudspark https://thecloudspark.github.io/helm-charts
 ```  
 
 ### Installing Charts
