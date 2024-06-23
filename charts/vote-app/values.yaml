@@ -101,4 +101,8 @@ redis:
         cpu: 100m
         memory: 256Mi
   replica:
-    replicaCount: 0
+    replicaCount: 1
+    autoscaling: 
+      enabled: true
+      minReplicas: 1
+      maxReplicas: 5
